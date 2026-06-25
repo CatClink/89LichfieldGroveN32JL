@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>89 Lichfield Grove</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>89 Lichfield Grove N3 2JL Extension</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Hello from GitHub Pages!</h1>
-    <p>My website is live.</p>
+  <main class="page-shell">
+    <header>
+      <h1>89 Lichfield Grove N3 2JL Extension. The impact on neighbouring windows and properties.</h1>
+      <p>With particular regard to habitable windows, loss of outlook, loss of daylight, over shadowing, sense of enclosure and overbearing. Scale , mass and bulk.</p>
+    </header>
+
+    <section>
+      <img src="images/89 PIC FROM GARDEN-COPY.jpg" alt="House extension affecting room windows" />
+    </section>
+
+
+
+    <section class="card results" aria-live="polite">
+      <h2>Impact summary</h2>
+      <div class="summary">
+      
+        <div>
+          <span class="label">Extension would accumulate to 81% depth of original house. over 4/5ths of the way to a new ground floor the size of the original ground floor.</span>
+          
+        </div>
+     
+      </div>
+      <div class="bars">
+        <div class="bar-group">
+          <span>Current window area</span>
+          <div class="bar-track"><div id="barExisting" class="bar existing"></div></div>
+        </div>
+        <div class="bar-group">
+          <span>Remaining window area</span>
+          <div class="bar-track"><div id="barRemaining" class="bar remaining"></div></div>
+        </div>
+      </div>
+      <div class="diagram">
+        <img src="images/window-impact.svg" alt="Visual comparison of existing and remaining glazed area" />
+      </div>
+      <p class="note">Use the values above to compare the reduction in habitable window area versus the proposed extension size.</p>
+    </section>
+
+    <footer>
+      <p>Tip: If the extension blocks windows to habitable rooms, the remaining glazed area may fall below planning or daylight guidance.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
