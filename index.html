@@ -1,33 +1,757 @@
 <!DOCTYPE html>
+<!--
+  EXHIBIT SLOT MANIFEST (for editing reference — not shown to visitors)
+  Each <figure class="exhibit" data-slot="..."> below is a placeholder.
+  To add a photo/plan: replace its inner .exhibit-frame contents with
+  <img src="images/FILE.jpg" alt="..."> and remove the "placeholder" class
+  from .exhibit-frame.
+
+  site-context-plan        ADDED — labelled floor plan (No.87/89/91, openings A-D)
+  ref-photo-a              ADDED — side return near opening A
+  existing-ext-exterior    ADDED — existing extension at No.89 (Zoopla)
+  existing-ext-context     ADDED — existing extension viewed across rear gardens
+  window-b / window-b1     ADDED — outlook from window B (already facing brick wall)
+  window-c / window-c1     ADDED — outlook from window C (remaining open outlook)
+  garden-extent-redline    ADDED — garden marked with red line showing proposed reach, blocking C & D
+  enclosure-tunnel-1/2     ADDED — tunnel/overbearing enclosure photos
+  privacy-distance-plan    PENDING — plan extract annotated with 3.6m distance between new window and B/C
+  notched-plan             PENDING — proposed footprint plan showing cut-back corner near No.87
+  floorplan-comparison     PENDING — side-by-side floor plans: HMO appeal (25/3158/FUL) vs current (26/1138/HSE)
+  doc-site-block-plan          [document card] Site & block plan
+  doc-existing-proposed-elev   [document card] Existing & proposed elevations
+  doc-internal-floor-plans     [document card] Internal floor plans
+  doc-spd-extract               [document card] SPD 2016 paras 14.21-14.27
+  doc-local-plan-extract        [document card] Barnet Local Plan CDH01/02/05 extract
+  doc-london-plan-d3            [document card] London Plan Policy D3 extract
+  doc-hmo-appeal-das             [document card] HMO Appeal Design & Access Statement
+  doc-photo-evidence-set         [document card] Photographic evidence set
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>89 Lichfield Grove N3 2JL Extension</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objection Dossier — 26/1138/HSE — 89 Lichfield Grove</title>
+<meta name="description" content="Independent objection dossier for Planning Application 26/1138/HSE, 89 Lichfield Grove, London N3.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0EA;
+    --panel:#F8F9F4;
+    --ink:#1C2520;
+    --ink-soft:#5C6358;
+    --blueprint:#1F3A5F;
+    --blueprint-deep:#13283F;
+    --blueprint-tint:#DCE6EE;
+    --redline:#A8341F;
+    --redline-tint:#F4E1DA;
+    --line:#C7CCBC;
+    --line-soft:#DADFD0;
+    --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', -apple-system, system-ui, sans-serif;
+    --maxw:880px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  [id]{scroll-margin-top:84px;}
+
+  body{
+    margin:0;
+    background-color:var(--paper);
+    background-image:
+      linear-gradient(rgba(31,58,95,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31,58,95,0.05) 1px, transparent 1px);
+    background-size:26px 26px;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--blueprint);text-decoration-thickness:1px;}
+  a:hover{color:var(--blueprint-deep);}
+
+  ::selection{background:var(--blueprint-tint);}
+
+  :focus-visible{
+    outline:2px solid var(--redline);
+    outline-offset:2px;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:rgba(238,240,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:12px 20px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .case-id{
+    font-family:var(--mono);
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:.03em;
+    color:var(--blueprint-deep);
+    white-space:nowrap;
+  }
+  .status-pill{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    background:var(--redline-tint);
+    color:var(--redline);
+    border:1px solid var(--redline);
+    padding:3px 9px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .topnav{
+    display:flex;
+    gap:2px;
+    margin-left:auto;
+    overflow-x:auto;
+    scrollbar-width:none;
+  }
+  .topnav::-webkit-scrollbar{display:none;}
+  .topnav a{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    text-decoration:none;
+    padding:6px 9px;
+    border-radius:2px;
+    white-space:nowrap;
+    transition:background .15s, color .15s;
+  }
+  .topnav a:hover, .topnav a.active{
+    background:var(--blueprint-tint);
+    color:var(--blueprint-deep);
+  }
+  .print-btn{
+    font-family:var(--mono);
+    font-size:12px;
+    background:var(--blueprint);
+    color:#fff;
+    border:none;
+    padding:7px 12px;
+    border-radius:2px;
+    cursor:pointer;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .print-btn:hover{background:var(--blueprint-deep);}
+  .nav-toggle{display:none;}
+
+  @media (max-width:760px){
+    .topnav{display:none;}
+    .nav-toggle{
+      display:block; margin-left:auto;
+      background:none;border:1px solid var(--line);
+      border-radius:2px; font-size:18px; line-height:1;
+      padding:5px 10px; cursor:pointer; color:var(--ink);
+    }
+    .topnav.open{
+      display:flex; flex-direction:column;
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--panel); border-bottom:1px solid var(--line);
+      padding:8px; max-width:none;
+    }
+  }
+
+  /* ---------- Layout ---------- */
+  main{max-width:var(--maxw); margin:0 auto; padding:0 20px 60px;}
+
+  .sheet{
+    position:relative;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:3px;
+    margin-top:34px;
+    padding:46px 32px 38px;
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .sheet.in-view{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .sheet{opacity:1; transform:none; transition:none;}
+  }
+  @media (max-width:600px){ .sheet{padding:40px 18px 30px;} }
+
+  .sheet-tab{
+    position:absolute;
+    top:0; left:32px; transform:translateY(-50%);
+    background:var(--blueprint);
+    color:#fff;
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:2px;
+  }
+  @media (max-width:600px){ .sheet-tab{left:18px; font-size:10px;} }
+
+  h1,h2,h3{font-family:var(--serif); font-weight:600; color:var(--ink); margin-top:0;}
+  h1{font-size:clamp(28px,5vw,42px); line-height:1.1; letter-spacing:-0.01em;}
+  h2{font-size:clamp(22px,3.4vw,28px); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--line-soft);}
+  h3{font-size:16px; text-transform:uppercase; letter-spacing:.04em; color:var(--blueprint-deep); font-family:var(--mono); font-weight:600; border:none;}
+
+  .ref{color:var(--blueprint); font-family:var(--mono); font-weight:600;}
+  .subhead{font-size:18px; color:var(--ink-soft); margin-top:6px; margin-bottom:30px;}
+
+  p{margin:0 0 14px;}
+  .lede{font-size:17px;}
+
+  /* ---------- Title block ---------- */
+  .titleblock{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin:26px 0 30px;
+  }
+  @media (max-width:560px){ .titleblock{grid-template-columns:1fr;} }
+  .titleblock > div{background:var(--panel); padding:12px 16px;}
+  .titleblock dt{
+    font-family:var(--mono); font-size:10px; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--ink-soft); margin:0 0 3px;
+  }
+  .titleblock dd{margin:0; font-size:15px;}
+  .titleblock .object-text{color:var(--redline); font-weight:600;}
+
+  /* ---------- Legend / badges ---------- */
+  .legend{margin:0 0 28px;}
+  .legend ul{list-style:none; padding:0; margin:10px 0 0; display:flex; flex-wrap:wrap; gap:18px;}
+  .legend li{display:flex; align-items:center; gap:8px; font-size:14px;}
+  .badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:26px; height:26px; border-radius:50%;
+    background:var(--blueprint); color:#fff;
+    font-family:var(--mono); font-weight:600; font-size:13px;
+    flex-shrink:0;
+  }
+  .badge-inline{width:20px; height:20px; font-size:11px; margin:0 2px; vertical-align:middle;}
+
+  /* ---------- Exhibit placeholders ---------- */
+  .exhibit{margin:24px 0; }
+  .exhibit-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:20px 0;}
+  .exhibit-grid .exhibit{margin:0;}
+  @media (max-width:560px){ .exhibit-grid{grid-template-columns:1fr;} }
+  .exhibit-frame{
+    border:1.5px dashed var(--line);
+    border-radius:3px;
+    min-height:170px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; gap:8px; padding:24px;
+    background:repeating-linear-gradient(135deg, rgba(31,58,95,0.035) 0 10px, transparent 10px 20px);
+  }
+  .exhibit-frame.has-image{
+    border-style:solid; border-color:var(--line); padding:0; min-height:0;
+    background:none; overflow:hidden; cursor:zoom-in;
+  }
+  .exhibit-frame.has-image img{display:block; width:100%; height:auto;}
+  .exhibit-tag{
+    font-family:var(--mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--redline); border:1px solid var(--redline); padding:2px 8px; border-radius:2px;
+  }
+  .exhibit-frame p{margin:0; font-size:13.5px; color:var(--ink-soft); max-width:420px;}
+  figcaption{font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:8px; text-align:center;}
+
+  /* ---------- Depth chart ---------- */
+  .chart-wrap{margin:28px 0 10px; background:var(--panel); border:1px solid var(--line-soft); border-radius:3px; padding:18px 14px 10px;}
+  .chart-wrap svg{width:100%; height:auto; display:block;}
+  .chart-legend{display:flex; gap:22px; flex-wrap:wrap; font-size:12.5px; margin-top:6px; padding:0 6px 8px;}
+  .chart-legend span{display:inline-flex; align-items:center; gap:6px;}
+  .swatch{width:13px; height:13px; border-radius:2px; display:inline-block;}
+
+  /* ---------- Callout cards ---------- */
+  .card{margin:22px 0; border-left:4px solid var(--blueprint); background:var(--blueprint-tint); padding:16px 20px; border-radius:0 3px 3px 0;}
+  .card h3{margin-bottom:8px;}
+  .card ul{margin:0; padding-left:18px;}
+  .card li{margin-bottom:8px;}
+  .card li:last-child{margin-bottom:0;}
+  .card .ref-code{font-family:var(--mono); font-weight:600; color:var(--blueprint-deep);}
+
+  .flag-card{border-left-color:var(--redline); background:var(--redline-tint);}
+  .flag-card h3{color:var(--redline);}
+
+  .quote-card{
+    border-left:4px solid var(--ink-soft); background:#fff;
+    padding:16px 20px; margin:20px 0; border-radius:0 3px 3px 0;
+  }
+  .quote-card cite{display:block; font-family:var(--mono); font-size:12px; color:var(--ink-soft); margin-top:10px; font-style:normal;}
+  .quote-card blockquote{margin:0 0 10px; padding-left:14px; border-left:2px solid var(--line); font-style:italic;}
+  .quote-card blockquote:last-of-type{margin-bottom:0;}
+
+  /* ---------- Table ---------- */
+  .policy-table{width:100%; border-collapse:collapse; margin:16px 0; font-size:14.5px;}
+  .policy-table th, .policy-table td{border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top;}
+  .policy-table th{background:var(--blueprint); color:#fff; font-family:var(--mono); font-size:12px; text-transform:uppercase; letter-spacing:.04em;}
+  .policy-table tr:nth-child(even) td{background:rgba(31,58,95,0.035);}
+  .policy-table td:first-child{font-family:var(--mono); font-weight:600; color:var(--blueprint-deep); white-space:nowrap;}
+
+  /* ---------- CTA ---------- */
+  .cta-card{background:var(--blueprint-deep); color:#fff; border-radius:4px; padding:26px 28px; margin-top:24px;}
+  .cta-card h3{color:#fff;}
+  .cta-card p{color:#cfd9e3;}
+  .cta-links{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;}
+  .cta-links a{
+    background:#fff; color:var(--blueprint-deep);
+    font-family:var(--mono); font-size:13px; font-weight:600;
+    padding:9px 14px; border-radius:2px; text-decoration:none;
+  }
+  .cta-links a:hover{background:var(--blueprint-tint);}
+
+  /* ---------- Documents grid ---------- */
+  .doc-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px;}
+  @media (max-width:600px){ .doc-grid{grid-template-columns:1fr;} }
+  .doc-card{
+    border:1px solid var(--line); border-radius:3px; padding:14px 16px;
+    background:var(--paper); display:flex; flex-direction:column; gap:6px;
+  }
+  .doc-card .doc-top{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .doc-card .filetype{
+    font-family:var(--mono); font-size:10px; letter-spacing:.04em;
+    background:var(--blueprint-tint); color:var(--blueprint-deep);
+    padding:2px 7px; border-radius:2px; white-space:nowrap;
+  }
+  .doc-card .doc-status{font-family:var(--mono); font-size:10px; color:var(--redline); text-transform:uppercase;}
+  .doc-card .doc-title{font-weight:600; font-size:14.5px;}
+  .doc-card .doc-desc{font-size:13px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- Footer ---------- */
+  footer{max-width:var(--maxw); margin:0 auto; padding:30px 20px 60px; color:var(--ink-soft); font-size:13px;}
+  footer .foot-links{display:flex; flex-wrap:wrap; gap:14px; margin:10px 0 16px;}
+  footer hr{border:none; border-top:1px solid var(--line); margin:18px 0;}
+  .disclaimer{font-style:italic;}
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed; inset:0; background:rgba(19,40,63,0.92);
+    display:flex; align-items:center; justify-content:center;
+    padding:30px; z-index:100; cursor:zoom-out;
+  }
+  .lightbox img{max-width:100%; max-height:100%; border-radius:3px;}
+  .lightbox[hidden]{display:none;}
+
+  .skip-link{position:absolute; left:-999px;}
+  .skip-link:focus{left:10px; top:10px; background:#fff; padding:6px 10px; z-index:200;}
+</style>
 </head>
 <body>
-  <main class="page-shell">
-    <header>
-      <h1>89 Lichfield Grove N3 2JL Extension. The impact on neighbouring windows and properties.</h1>
-      <p>With particular regard to habitable windows, loss of outlook, loss of daylight, over shadowing, sense of enclosure and overbearing. Scale , mass and bulk.</p>
-    </header>
 
- <img src="garden.jpg" alt="House extension affecting room windows" />
+<a href="#overview" class="skip-link">Skip to content</a>
 
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="case-id">26/1138/HSE</span>
+    <span class="status-pill">Objection submitted</span>
+    <nav class="topnav" id="topnav">
+      <a href="#overview">Overview</a>
+      <a href="#existing-extension">Existing</a>
+      <a href="#daylight-outlook">Daylight</a>
+      <a href="#enclosure">Enclosure</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#character">Character</a>
+      <a href="#policy-compliance">Policy</a>
+      <a href="#hmo-history">HMO history</a>
+      <a href="#conclusion">Conclusion</a>
+      <a href="#exhibits">Documents</a>
+    </nav>
+    <button class="print-btn" id="printBtn">Print / Save PDF</button>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
 
-    <section class="card results" aria-live="polite">
-      <h2>Impact summary</h2>
-      <div class="summary">
-      
-        <div>
-          <span class="label">Extension would accumulate to 81% depth of original house. over 4/5ths of the way to a new ground floor the size of the original ground floor.</span>
-          
+<main>
+
+  <!-- OVERVIEW -->
+  <section id="overview" class="sheet">
+    <span class="sheet-tab">Sheet 01 — Overview</span>
+    <h1>Objection to Planning Application <span class="ref">26/1138/HSE</span></h1>
+    <p class="subhead">Proposed rear extension at 89 Lichfield Grove, London N3 2JL</p>
+
+    <p class="lede">I am formally objecting to Planning Application 26/1138/HSE as the owner of the neighbouring property, No. 91. We have lived here for almost 31 years. This page sets out that objection in full, with the supporting plans, photographs and policy references that the planning portal's comment form does not have room for.</p>
+
+    <div class="titleblock">
+      <div><dt>Site</dt><dd>89 Lichfield Grove, London N3</dd></div>
+      <div><dt>Objector</dt><dd>Andrew Smith — 91 Lichfield Grove<br>(neighbouring property, 31 years)</dd></div>
+      <div><dt>Application ref.</dt><dd>26/1138/HSE</dd></div>
+      <div><dt>Comment submitted</dt><dd>02 May 2026</dd></div>
+      <div><dt>Related case</dt><dd>Appeal 6005972 / App. 25/3158/FUL (HMO use)</dd></div>
+      <div><dt>Position</dt><dd class="object-text">Object — refusal requested</dd></div>
+    </div>
+
+    <div class="legend">
+      <h3>Key to labelled openings at No. 91</h3>
+      <ul>
+        <li><span class="badge">A</span> Living Room French Doors</li>
+        <li><span class="badge">B&nbsp;C</span> Kitchen-Diner windows</li>
+        <li><span class="badge">D</span> Toilet window</li>
+      </ul>
+    </div>
+
+    <figure class="exhibit" data-slot="site-context-plan">
+      <div class="exhibit-frame has-image">
+        <img src="images/site-context-plan.jpg" alt="Floor plan showing No. 87, No. 89 and No. 91 Lichfield Grove with openings A, B, C and D labelled along the boundary with No. 89">
+      </div>
+      <figcaption>Fig. 0 — Site &amp; floor plan, with openings A–D labelled at No. 91</figcaption>
+    </figure>
+
+    <figure class="exhibit" data-slot="ref-photo-a">
+      <div class="exhibit-frame has-image">
+        <img src="images/ref-photo-a.jpg" alt="Side return at No. 91 near the Living Room French Doors, labelled A">
+      </div>
+      <figcaption>Fig. 0b — Side return adjacent to opening A (Living Room French Doors)</figcaption>
+    </figure>
+  </section>
+
+  <!-- EXISTING EXTENSION -->
+  <section id="existing-extension" class="sheet">
+    <span class="sheet-tab">Sheet 02 — The existing extension</span>
+    <h2>An extension that already exceeds policy</h2>
+    <p>No. 89 has already undergone a large, full-width extension measuring <strong>4.0 metres</strong> in depth — exceeding Barnet's <strong>3.5 metre</strong> SPD guideline. It is out of character and out of proportion to the main building, and already dominates the adjoining property at No. 91.</p>
+
+    <div class="chart-wrap" id="depth-chart">
+      <svg viewBox="0 0 620 232" role="img" aria-label="Bar chart comparing extension depths against the 3.5 metre SPD guideline">
+        <!-- guideline -->
+        <line x1="345" y1="38" x2="345" y2="198" stroke="#A8341F" stroke-width="1.6" stroke-dasharray="5,4"/>
+        <text x="345" y="26" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#A8341F" font-weight="600">SPD GUIDELINE — 3.5 m</text>
+
+        <!-- row 1: existing -->
+        <text x="20" y="66" font-family="Inter" font-size="13.5" fill="#1C2520" font-weight="600">Existing extension</text>
+        <rect x="170" y="76" width="175" height="30" fill="#1F3A5F"/>
+        <rect x="345" y="76" width="25" height="30" fill="#A8341F" opacity="0.78"/>
+        <text x="380" y="96" font-family="IBM Plex Mono" font-size="13" fill="#1C2520" font-weight="600">4.0 m</text>
+
+        <!-- row 2: combined -->
+        <text x="20" y="146" font-family="Inter" font-size="13.5" fill="#1C2520" font-weight="600">Existing + proposed (combined)</text>
+        <rect x="170" y="156" width="175" height="30" fill="#1F3A5F"/>
+        <rect x="345" y="156" width="165" height="30" fill="#A8341F" opacity="0.78"/>
+        <text x="520" y="176" font-family="IBM Plex Mono" font-size="13" fill="#1C2520" font-weight="600">6.8 m</text>
+
+        <!-- axis -->
+        <line x1="170" y1="200" x2="560" y2="200" stroke="#C7CCBC" stroke-width="1"/>
+        <g font-family="IBM Plex Mono" font-size="10.5" fill="#5C6358" text-anchor="middle">
+          <text x="170" y="215">0</text>
+          <text x="220" y="215">1</text>
+          <text x="270" y="215">2</text>
+          <text x="320" y="215">3</text>
+          <text x="370" y="215">4</text>
+          <text x="420" y="215">5</text>
+          <text x="470" y="215">6</text>
+          <text x="520" y="215">7m</text>
+        </g>
+      </svg>
+      <div class="chart-legend">
+        <span><span class="swatch" style="background:#1F3A5F"></span>Within the 3.5 m SPD benchmark</span>
+        <span><span class="swatch" style="background:#A8341F;opacity:.78"></span>Depth beyond the SPD benchmark</span>
+      </div>
+    </div>
+
+    <figure class="exhibit" data-slot="existing-ext-exterior">
+      <div class="exhibit-frame has-image">
+        <img src="images/existing-ext-exterior.jpg" alt="No. 89 Lichfield Grove showing the existing full-width, flat-roof rear extension">
+      </div>
+      <figcaption>Fig. 1 — No. 89's existing full-width, flat-roof extension (source: Zoopla.co.uk)</figcaption>
+    </figure>
+
+    <figure class="exhibit" data-slot="existing-ext-context">
+      <div class="exhibit-frame has-image">
+        <img src="images/existing-ext-context.jpg" alt="Rear gardens viewed across the terrace, showing the full-width flat-roof extension at No. 89 against neighbouring rooflines">
+      </div>
+      <figcaption>Fig. 2 — The existing extension viewed across the rear gardens</figcaption>
+    </figure>
+  </section>
+
+  <!-- DAYLIGHT & OUTLOOK -->
+  <section id="daylight-outlook" class="sheet">
+    <span class="sheet-tab">Sheet 03 — Loss of daylight &amp; outlook</span>
+    <h2>Loss of daylight and outlook to a primary habitable room</h2>
+
+    <p>Our outrigger at No. 91 contains the kitchen-diner — a primary habitable room in which we spend a substantial amount of time. At the rear of the outrigger is a toilet (<span class="badge badge-inline">D</span>), so the kitchen-diner receives no natural light from that direction. Its only meaningful source of daylight and outlook is therefore the two flank windows facing No. 89 (<span class="badge badge-inline">B</span> &amp; <span class="badge badge-inline">C</span>).</p>
+
+    <p>One of those windows is already largely obscured by the existing side wall of No. 89 (<span class="badge badge-inline">B</span>). That leaves only a single window with any real open outlook (<span class="badge badge-inline">C</span>) — and the proposed extension would block that remaining window.</p>
+
+    <p>The result would not be a minor or technical change, but a very substantial loss of outlook and an overbearing impact on what is currently the sole remaining source of unobstructed natural light to this habitable room. In practical terms, it would leave the kitchen-diner with no meaningful outlook at all.</p>
+
+    <p class="lede" style="margin-top:24px;">The photographs below were taken looking straight out of each window — they show exactly what daylight and outlook the kitchen-diner currently has.</p>
+    <div class="exhibit-grid">
+      <figure class="exhibit" data-slot="window-b">
+        <div class="exhibit-frame has-image">
+          <img src="images/window-b.jpg" alt="View out of window B at No. 91, looking directly onto the brick side wall of No. 89">
         </div>
-    
- 
-  </main>
+        <figcaption>Fig. 3a — Window B: already facing a brick wall</figcaption>
+      </figure>
+      <figure class="exhibit" data-slot="window-b1">
+        <div class="exhibit-frame has-image">
+          <img src="images/window-b1.jpg" alt="Second view from window B at No. 91, looking onto the side wall of No. 89 over the fence">
+        </div>
+        <figcaption>Fig. 3b — Window B, alternate angle</figcaption>
+      </figure>
+      <figure class="exhibit" data-slot="window-c">
+        <div class="exhibit-frame has-image">
+          <img src="images/window-c.jpg" alt="View out of window C at No. 91, showing open sky and trees above the fence line">
+        </div>
+        <figcaption>Fig. 3c — Window C: the kitchen-diner's only remaining open outlook</figcaption>
+      </figure>
+      <figure class="exhibit" data-slot="window-c1">
+        <div class="exhibit-frame has-image">
+          <img src="images/window-c1.jpg" alt="Second view from window C at No. 91, showing rooftops and sky over the boundary fence">
+        </div>
+        <figcaption>Fig. 3d — Window C, alternate angle</figcaption>
+      </figure>
+    </div>
 
-  <script src="script.js"></script>
+    <figure class="exhibit" data-slot="garden-extent-redline">
+      <div class="exhibit-frame has-image">
+        <img src="images/garden-extent-redline.jpg" alt="No. 91's garden marked with a red line showing how far the proposed extension at No. 89 would extend, directly in front of windows C and D">
+      </div>
+      <figcaption>Fig. 4 — The proposed extension would reach the red line, directly blocking windows C and D</figcaption>
+    </figure>
+
+    <div class="card">
+      <h3>Policy basis</h3>
+      <ul>
+        <li><span class="ref-code">Policy CDH05</span> — Barnet Local Plan (2025) requires development to avoid significant adverse impacts on neighbouring sunlight and daylight.</li>
+        <li><span class="ref-code">SPD paras 14.21–14.27</span> — the Residential Design Guidance SPD (2016) makes clear that the effect on neighbouring amenity must be assessed properly and holistically, not by reference to depth alone.</li>
+        <li><span class="ref-code">Policy D3</span> — the London Plan (2021) likewise requires development to safeguard the amenity of neighbouring occupiers, including outlook and daylight.</li>
+      </ul>
+      <p style="margin-top:10px; margin-bottom:0;">Here, where one window is already compromised and the other is the only remaining source of unobstructed light and outlook to a habitable room, the proposed extension fails that test.</p>
+    </div>
+  </section>
+
+  <!-- ENCLOSURE -->
+  <section id="enclosure" class="sheet">
+    <span class="sheet-tab">Sheet 04 — Enclosure &amp; overbearing impact</span>
+    <h2>Enclosure and overbearing impact</h2>
+    <p>The existing extension, together with the proposed extension, would create a combined structure <strong>6.8 metres</strong> deep — nearly double Barnet's 3.5 metre SPD benchmark for semi-detached properties (<a href="#depth-chart">see depth comparison ↑</a>). This would extend along the full length of our property, creating a box-like feature which would cause an oppressive sense of enclosure and an unacceptable overbearing impact on amenity.</p>
+
+    <div class="exhibit-grid">
+      <figure class="exhibit" data-slot="enclosure-tunnel-1">
+        <div class="exhibit-frame has-image">
+          <img src="images/enclosure-tunnel-1.jpg" alt="Narrow side passage at No. 91 between the fence and the side wall of the house, illustrating the tunnel-like enclosure effect">
+        </div>
+        <figcaption>Fig. 5a — The existing side return: already a narrow, tunnel-like space</figcaption>
+      </figure>
+      <figure class="exhibit" data-slot="enclosure-tunnel-2">
+        <div class="exhibit-frame has-image">
+          <img src="images/enclosure-tunnel-2.jpg" alt="Tight gap between rear extensions of neighbouring properties, illustrating an overbearing, enclosed effect">
+        </div>
+        <figcaption>Fig. 5b — A comparable gap between extensions nearby, showing the overbearing effect a deep, full-width structure creates</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section id="privacy" class="sheet">
+    <span class="sheet-tab">Sheet 05 — Privacy</span>
+    <h2>Privacy</h2>
+    <p>A window is to be located on the side of the proposed extension, approximately <strong>3.6 metres</strong> from windows B and C of our kitchen-diner. This would impact our privacy, comfort and sense of well-being.</p>
+
+    <figure class="exhibit" data-slot="privacy-distance-plan">
+      <div class="exhibit-frame">
+        <span class="exhibit-tag">Exhibit pending</span>
+        <p>Plan extract annotated with the 3.6 m distance between the proposed window and windows B/C.</p>
+      </div>
+      <figcaption>Fig. 6 — Distance between proposed window and B/C</figcaption>
+    </figure>
+
+    <div class="card flag-card">
+      <h3>Assessment gap</h3>
+      <p style="margin-bottom:0;">Concerning daylight &amp; outlook, enclosure, and privacy alike: no information has been submitted, nor any plans showing the impact of the proposed extension on No. 91. The impact on our home cannot have been properly assessed.</p>
+    </div>
+  </section>
+
+  <!-- CHARACTER -->
+  <section id="character" class="sheet">
+    <span class="sheet-tab">Sheet 06 — Character &amp; design</span>
+    <h2>Out of character — a notched, overdeveloped form</h2>
+    <p>The proposed extension has been cut back at the western corner so as to mitigate harm to the neighbouring amenity of No. 87. This reflects overdevelopment of the site rather than a coherent or well-resolved design solution.</p>
+    <p>The design leaves a notched footprint that is out of character with the property and the surrounding area. Rather than resolving one harm, the design creates another. The scale, mass and bulk of this extension cannot sit harmoniously within the plot.</p>
+
+    <figure class="exhibit" data-slot="notched-plan">
+      <div class="exhibit-frame">
+        <span class="exhibit-tag">Exhibit pending</span>
+        <p>Plan: the proposed footprint showing the cut-back corner / "notch" near No. 87.</p>
+      </div>
+      <figcaption>Fig. 7 — Notched footprint near No. 87</figcaption>
+    </figure>
+  </section>
+
+  <!-- POLICY COMPLIANCE -->
+  <section id="policy-compliance" class="sheet">
+    <span class="sheet-tab">Sheet 07 — Policy compliance summary</span>
+    <h2>Policy compliance summary</h2>
+    <p>The proposal conflicts with the following policies, both individually and cumulatively:</p>
+    <table class="policy-table">
+      <thead>
+        <tr><th>Policy</th><th>Source</th><th>Why the proposal conflicts</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CDH05</td>
+          <td>Barnet Local Plan (2025)</td>
+          <td>Establishes criteria for residential extensions; the proposal causes significant loss of daylight and outlook to a primary habitable room.</td>
+        </tr>
+        <tr>
+          <td>CDH02</td>
+          <td>Barnet Local Plan (2025)</td>
+          <td>Requires protection of residential amenity — overshadowing, blocked daylight, reduced sunlight, loss of privacy and loss of outlook are all engaged here.</td>
+        </tr>
+        <tr>
+          <td>CDH01</td>
+          <td>Barnet Local Plan (2025)</td>
+          <td>Requires development to respect the character and appearance of the existing building and surrounding area; the excessive scale, bulk and "notched" design fail this.</td>
+        </tr>
+        <tr>
+          <td>SPD 14.21–14.27</td>
+          <td>Residential Design Guidance SPD (2016)</td>
+          <td>Amenity impact must be assessed holistically, not by depth alone — no such assessment has been provided for No. 91.</td>
+        </tr>
+        <tr>
+          <td>D3</td>
+          <td>London Plan (2021)</td>
+          <td>Requires safeguarding of neighbouring occupiers' amenity, including outlook and daylight.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-bottom:0;">In particular, the proposal fails to: safeguard neighbouring amenity through the significant loss of daylight and outlook, the creation of an overbearing sense of enclosure, and harmful impacts on privacy; avoid overdevelopment of the site, as evidenced by the need to cut back part of the extension to mitigate harm elsewhere; and respect the character and appearance of the existing building and surrounding area.</p>
+  </section>
+
+  <!-- HMO HISTORY -->
+  <section id="hmo-history" class="sheet">
+    <span class="sheet-tab">Sheet 08 — Planning history: the HMO appeal</span>
+    <h2>Planning history — the HMO appeal context</h2>
+    <p>There is currently a live appeal relating to the use of this property as an HMO (Appeal Ref: <strong>6005972</strong>; Application Ref: <strong>25/3158/FUL</strong>). In that application, the scale of the extension was justified as providing additional communal space for an 8-person, 7-bedroom HMO.</p>
+    <p>This current application, 26/1138/HSE, removes any reference to HMO use and instead presents the property as a 4-bedroom single-family dwelling. However, the design layout remains largely identical to the previous HMO application.</p>
+
+    <div class="quote-card">
+      <h3 style="color:var(--ink-soft);">From the Architect's HMO Appeal Design &amp; Access Statement</h3>
+      <blockquote>"In practice, bringing the property up to a standard that would properly support contemporary family living would require significant reconfiguration and design intervention."</blockquote>
+      <blockquote>"Optimising the property for family use would necessitate combining bedrooms to form fewer but larger rooms, enlarging and rationalising communal areas, and reworking the outdoor space to provide practical family amenity."</blockquote>
+      <cite>Design and Access Statement, para. 8.14 — Appeal 6005972 / App. 25/3158/FUL</cite>
+    </div>
+
+    <p>No such substantive "significant reconfiguration and design intervention" has been provided in the current application. The changes are limited to:</p>
+    <ol>
+      <li>Relabelling two bedrooms as offices, and another as a walk-in closet.</li>
+      <li>Reducing one corner of the proposed extension.</li>
+    </ol>
+    <p>It is therefore unclear whether the proposal represents a genuinely reconfigured family dwelling, or an HMO-style layout that has simply been relabelled for the purposes of this application. The proposal should be assessed on its own merits as a single dwelling — for which an extension of this scale appears unjustified.</p>
+
+    <figure class="exhibit" data-slot="floorplan-comparison">
+      <div class="exhibit-frame">
+        <span class="exhibit-tag">Exhibit pending</span>
+        <p>Side-by-side floor plans: the HMO appeal scheme (25/3158/FUL) vs. the current application (26/1138/HSE).</p>
+      </div>
+      <figcaption>Fig. 8 — HMO scheme vs. current scheme floor plans</figcaption>
+    </figure>
+  </section>
+
+  <!-- CONCLUSION -->
+  <section id="conclusion" class="sheet">
+    <span class="sheet-tab">Sheet 09 — Conclusion</span>
+    <h2>Conclusion — objection and request for refusal</h2>
+    <p>The proposal is contrary to Barnet's Residential Design Guidance SPD and Policies CDH01, CDH02 and CDH05 of the Barnet Local Plan, and fails to comply with Policy D3 of the London Plan (2021).</p>
+    <p>The extension would result in a dominant and intrusive form of development, causing unacceptable harm to neighbouring amenity and the character of the area. There is no need or justification for it.</p>
+    <p style="margin-bottom:0;"><strong>I object to planning application 26/1138/HSE and respectfully request that planning permission be refused.</strong></p>
+
+ 
+  </section>
+
+  
+  </section>
+
+</main>
+
+<footer>
+  <strong>26/1138/HSE</strong> — 89 Lichfield Grove, London N3 2JL
+  <div class="foot-links">
+    <a href="https://publicaccess.barnet.gov.uk/online-applications/search.do?action=simple&searchType=Application" target="_blank" rel="noopener">Barnet planning search</a>
+    <a href="https://www.barnet.gov.uk/planning-and-building-control/planning-applications-and-permissions/view-search-and-comment" target="_blank" rel="noopener">View, search &amp; comment guidance</a>
+    <a href="https://acp.planninginspectorate.gov.uk/casesearch.aspx" target="_blank" rel="noopener">Appeals Casework Portal</a>
+  </div>
+  <hr>
+  <p class="disclaimer">This is an independent objection dossier prepared by a resident of 91 Lichfield Grove. It is not an official Barnet Council document. It expands on a comment formally submitted to Barnet's Planning Department on 2 May 2026.</p>
+  <p id="lastUpdated"></p>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+  // Last updated stamp
+  document.getElementById('lastUpdated').textContent =
+    'Dossier last updated: ' + new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  // Mobile nav toggle
+  var navToggle = document.getElementById('navToggle');
+  var topnav = document.getElementById('topnav');
+  navToggle.addEventListener('click', function(){
+    var open = topnav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  topnav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ topnav.classList.remove('open'); });
+  });
+
+  // Active nav link on scroll
+  var sections = document.querySelectorAll('main section[id]');
+  var navLinks = document.querySelectorAll('.topnav a');
+  var navObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        navLinks.forEach(function(l){ l.classList.remove('active'); });
+        var match = document.querySelector('.topnav a[href="#' + entry.target.id + '"]');
+        if(match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(function(s){ navObserver.observe(s); });
+
+  // Fade-in sheets
+  var fadeObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.sheet').forEach(function(s){ fadeObserver.observe(s); });
+
+  // Print button
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+  // Lightbox for any uploaded exhibit images
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.exhibit-frame.has-image img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.hidden = false;
+    });
+  });
+  lightbox.addEventListener('click', function(){ lightbox.hidden = true; });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') lightbox.hidden = true;
+  });
+</script>
+
 </body>
 </html>
